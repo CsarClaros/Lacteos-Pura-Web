@@ -1,0 +1,66 @@
+<section class="diagram-section">
+
+    <div class="section-header">
+        <h2>Diagrama de Clases</h2>
+
+        <p>
+            El diagrama de clases representa la estructura estática del sistema,
+            identificando las principales entidades, sus atributos, métodos y
+            relaciones.
+        </p>
+    </div>
+
+    <div class="uml-container">
+
+        @for (clase of clases; track clase.nombre) {
+
+        <div class="uml-card">
+
+            <div class="uml-title">
+                {{ clase.nombre }}
+            </div>
+
+            <div class="uml-body">
+
+                <div class="uml-subsection">
+                    <h4>Atributos</h4>
+
+                    <ul>
+                        @for (atributo of clase.atributos; track atributo) {
+                        <li>{{ atributo }}</li>
+                        }
+                    </ul>
+                </div>
+
+                <div class="uml-subsection">
+                    <h4>Métodos</h4>
+
+                    <ul>
+                        @for (metodo of clase.metodos; track metodo) {
+                        <li>{{ metodo }}</li>
+                        }
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+        }
+
+    </div>
+
+    <div class="relations">
+
+        <h3>Relaciones Principales</h3>
+
+        <ul>
+            <li><strong>Cliente</strong> realiza uno o varios pedidos.</li>
+            <li><strong>Pedido</strong> contiene múltiples productos.</li>
+            <li><strong>Inventario</strong> administra la disponibilidad de productos.</li>
+            <li><strong>Producto</strong> participa en procesos de producción y venta.</li>
+        </ul>
+
+    </div>
+
+</section>

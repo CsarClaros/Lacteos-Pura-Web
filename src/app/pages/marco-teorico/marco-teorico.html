@@ -1,0 +1,316 @@
+<div class="min-h-screen bg-[var(--crema)]">
+
+    <!-- Header -->
+
+    <div class="bg-gradient-to-r from-[var(--verde-oscuro)] to-[var(--verde-medio)] text-white py-16">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="flex items-center space-x-2 text-[var(--verde-palido)] mb-4">
+                <lucide-angular [img]="BookOpen" class="w-5 h-5"></lucide-angular>
+                <span>Fundamentos Teóricos</span>
+            </div>
+
+            <h1 class="text-4xl lg:text-5xl font-bold mb-4">
+                Marco Teórico
+            </h1>
+
+            <p class="text-xl text-[var(--verde-palido)] max-w-3xl">
+                Fundamentos conceptuales del análisis y diseño de sistemas aplicados
+                al caso de estudio Lácteos Pura
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+
+            <!-- Sidebar -->
+
+            <aside class="lg:col-span-1">
+
+                <div class="bg-white rounded-2xl shadow-lg p-6 sticky top-24">
+
+                    <h2 class="font-bold text-[var(--texto-principal)] mb-4">
+                        Contenido
+                    </h2>
+
+                    <nav class="space-y-2">
+
+                        @for(section of sections; track section.id){
+
+                        <button (click)="scrollToSection(section.id)"
+                            class="w-full text-left px-4 py-3 rounded-lg transition-all flex items-center space-x-3"
+                            [class.bg-[var(--verde-oscuro)]]="activeSection === section.id"
+                            [class.text-white]="activeSection === section.id">
+
+                            <lucide-angular [img]="section.icon" class="w-4 h-4">
+                            </lucide-angular>
+
+                            <span class="text-sm">
+                                {{ section.title }}
+                            </span>
+
+                        </button>
+
+                        }
+
+                    </nav>
+
+                </div>
+
+            </aside>
+
+            <!-- Contenido -->
+
+            <main class="lg:col-span-3 space-y-8">
+
+                <!-- Introducción -->
+
+                <section id="introduccion" class="bg-white rounded-2xl shadow-lg p-8 lg:p-12">
+
+                    <div class="flex items-center space-x-3 mb-6">
+
+                        <div
+                            class="w-12 h-12 bg-[var(--verde-oscuro)] text-white rounded-xl flex items-center justify-center">
+
+                            <lucide-angular [img]="BookOpen" class="w-6 h-6">
+                            </lucide-angular>
+
+                        </div>
+
+                        <h2 class="text-3xl font-bold text-[var(--texto-principal)]">
+                            Introducción
+                        </h2>
+
+                    </div>
+
+                    <div class="space-y-4 text-[var(--texto-secundario)] leading-relaxed">
+
+                        <p>
+                            El análisis y diseño de sistemas es una disciplina fundamental...
+                        </p>
+
+                        <p>
+                            El presente proyecto académico aplica metodologías tradicionales
+                            y modernas...
+                        </p>
+
+                        <div class="bg-[var(--verde-palido)] border-l-4 border-[var(--verde-oscuro)] p-6 rounded-r-lg">
+
+                            <h3 class="font-bold text-[var(--verde-oscuro)] mb-2">
+                                Objetivo del Marco Teórico
+                            </h3>
+
+                            <p>
+                                Establecer los fundamentos conceptuales y metodológicos...
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section id="analisis-sistemas" class="bg-white rounded-2xl shadow-lg p-8 lg:p-12 scroll-mt-24">
+
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 bg-blue-500 text-white rounded-xl flex items-center justify-center">
+                            <lucide-angular [img]="FileText" class="w-6 h-6"></lucide-angular>
+                        </div>
+
+                        <h2 class="text-3xl font-bold text-[var(--texto-principal)]">
+                            Análisis de Sistemas
+                        </h2>
+                    </div>
+
+                    <div class="space-y-6 text-[var(--texto-secundario)] leading-relaxed">
+
+                        <div>
+                            <h3 class="text-xl font-bold text-[var(--texto-principal)] mb-3">
+                                Definición
+                            </h3>
+
+                            <p>
+                                El análisis de sistemas consiste en estudiar una organización,
+                                identificar sus procesos, problemas y oportunidades de mejora
+                                para diseñar soluciones tecnológicas eficientes.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-bold text-[var(--texto-principal)] mb-3">
+                                Fases del Análisis
+                            </h3>
+
+                            <div class="grid md:grid-cols-2 gap-4">
+
+                                <div class="bg-[var(--crema)] p-4 rounded-lg">
+                                    <h4 class="font-bold">1. Planificación</h4>
+                                    <p>Definición de objetivos y alcance.</p>
+                                </div>
+
+                                <div class="bg-[var(--crema)] p-4 rounded-lg">
+                                    <h4 class="font-bold">2. Análisis</h4>
+                                    <p>Levantamiento de requerimientos.</p>
+                                </div>
+
+                                <div class="bg-[var(--crema)] p-4 rounded-lg">
+                                    <h4 class="font-bold">3. Diseño</h4>
+                                    <p>Modelado de la solución.</p>
+                                </div>
+
+                                <div class="bg-[var(--crema)] p-4 rounded-lg">
+                                    <h4 class="font-bold">4. Implementación</h4>
+                                    <p>Construcción y puesta en marcha.</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section id="modelo-estructurado" class="bg-white rounded-2xl shadow-lg p-8 lg:p-12 scroll-mt-24">
+
+                    <h2 class="text-3xl font-bold mb-6 text-[var(--texto-principal)]">
+                        Modelo Estructurado
+                    </h2>
+
+                    <p class="text-[var(--texto-secundario)] mb-6">
+                        El análisis estructurado se enfoca en los procesos y flujos de datos.
+                    </p>
+
+                    <div class="space-y-4">
+
+                        <div class="border-l-4 border-purple-500 pl-4">
+                            <h3 class="font-bold">Diagrama de Flujo de Datos (DFD)</h3>
+                            <p>
+                                Representa cómo circula la información dentro del sistema.
+                            </p>
+                        </div>
+
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h3 class="font-bold">Diccionario de Datos</h3>
+                            <p>
+                                Describe cada dato utilizado por el sistema.
+                            </p>
+                        </div>
+
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h3 class="font-bold">Diagrama Entidad Relación</h3>
+                            <p>
+                                Define las entidades y relaciones de la base de datos.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section id="modelo-objetos" class="bg-white rounded-2xl shadow-lg p-8 lg:p-12 scroll-mt-24">
+
+                    <h2 class="text-3xl font-bold mb-6 text-[var(--texto-principal)]">
+                        Modelo Orientado a Objetos
+                    </h2>
+
+                    <p class="text-[var(--texto-secundario)] mb-6">
+                        Modela el sistema mediante objetos que contienen atributos y métodos.
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-4">
+
+                        <div class="bg-[var(--verde-palido)] p-4 rounded-lg">
+                            <h4 class="font-bold">Clase</h4>
+                            <p>Plantilla que define objetos.</p>
+                        </div>
+
+                        <div class="bg-[var(--verde-palido)] p-4 rounded-lg">
+                            <h4 class="font-bold">Objeto</h4>
+                            <p>Instancia de una clase.</p>
+                        </div>
+
+                        <div class="bg-[var(--verde-palido)] p-4 rounded-lg">
+                            <h4 class="font-bold">Herencia</h4>
+                            <p>Permite reutilizar características.</p>
+                        </div>
+
+                        <div class="bg-[var(--verde-palido)] p-4 rounded-lg">
+                            <h4 class="font-bold">Polimorfismo</h4>
+                            <p>Diferentes respuestas ante el mismo mensaje.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="mt-8">
+
+                        <h3 class="text-xl font-bold mb-4">
+                            UML
+                        </h3>
+
+                        <ul class="space-y-2">
+
+                            <li>Diagramas de Casos de Uso</li>
+
+                            <li>Diagramas de Clases</li>
+
+                            <li>Diagramas de Secuencia</li>
+
+                            <li>Diagramas de Actividades</li>
+
+                        </ul>
+
+                    </div>
+
+                </section>
+
+                <section class="bg-white rounded-2xl shadow-lg p-8 lg:p-12">
+
+                    <h2 class="text-2xl font-bold mb-6 text-[var(--texto-principal)]">
+                        Referencias Bibliográficas
+                    </h2>
+
+                    <div class="space-y-3 text-sm text-[var(--texto-secundario)]">
+
+                        <p>
+                            Kendall, K. E., & Kendall, J. E. (2011).
+                            Análisis y diseño de sistemas (8ª ed.).
+                            Pearson Educación.
+                        </p>
+
+                        <p>
+                            Pressman, R. S. (2010).
+                            Ingeniería del software: Un enfoque práctico.
+                            McGraw-Hill.
+                        </p>
+
+                        <p>
+                            Sommerville, I. (2011).
+                            Ingeniería de software.
+                            Pearson Educación.
+                        </p>
+
+                        <p>
+                            Booch, G., Rumbaugh, J., & Jacobson, I. (2006).
+                            El lenguaje unificado de modelado.
+                            Addison-Wesley.
+                        </p>
+
+                        <p>
+                            Date, C. J. (2004).
+                            Introducción a los sistemas de bases de datos.
+                            Pearson Educación.
+                        </p>
+
+                    </div>
+
+                </section>
+            </main>
+        </div>
+    </div>
+
+</div>

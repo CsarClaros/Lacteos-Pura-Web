@@ -1,0 +1,94 @@
+<nav class="bg-[var(--verde-oscuro)] text-white sticky top-0 z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="flex items-center justify-between h-16">
+
+            <!-- Logo -->
+            <a routerLink="/" class="flex items-center space-x-3">
+
+                <div class="w-10 h-10 bg-[var(--verde-claro)] rounded-lg flex items-center justify-center">
+                    <span class="font-bold text-xl">LP</span>
+                </div>
+
+                <div>
+                    <div class="font-bold text-lg">
+                        Lácteos Pura
+                    </div>
+
+                    <div class="text-xs text-[var(--verde-palido)] opacity-90">
+                        Sistema de Análisis
+                    </div>
+                </div>
+
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-1">
+
+                @for (link of navLinks; track link.path) {
+
+                <a [routerLink]="link.path" routerLinkActive="bg-[var(--verde-claro)] text-white"
+                    [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+                    class="px-4 py-2 rounded-lg transition-all flex items-center space-x-2 text-[var(--verde-palido)] hover:bg-[var(--verde-medio)]">
+
+                    <lucide-icon [img]="link.icon" class="w-4 h-4">
+                    </lucide-icon>
+
+                    <span>
+                        {{ link.label }}
+                    </span>
+
+                </a>
+
+                }
+
+            </div>
+
+            <!-- Mobile Button -->
+            <button (click)="toggleMenu()"
+                class="md:hidden p-2 rounded-lg hover:bg-[var(--verde-medio)] transition-colors">
+
+                @if (!isMenuOpen) {
+
+                <lucide-icon [img]="Menu" class="w-6 h-6">
+                </lucide-icon>
+
+                } @else {
+
+                <lucide-icon [img]="X" class="w-6 h-6">
+                </lucide-icon>
+
+                }
+
+            </button>
+
+        </div>
+
+        <!-- Mobile Navigation -->
+        @if (isMenuOpen) {
+
+        <div class="md:hidden pb-4 space-y-1">
+
+            @for (link of navLinks; track link.path) {
+
+            <a [routerLink]="link.path" (click)="closeMenu()" routerLinkActive="bg-[var(--verde-claro)] text-white"
+                [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+                class="block px-4 py-3 rounded-lg transition-all flex items-center space-x-2 text-[var(--verde-palido)] hover:bg-[var(--verde-medio)]">
+
+                <lucide-icon [img]="link.icon" class="w-4 h-4">
+                </lucide-icon>
+
+                <span>
+                    {{ link.label }}
+                </span>
+
+            </a>
+
+            }
+
+        </div>
+
+        }
+
+    </div>
+</nav>

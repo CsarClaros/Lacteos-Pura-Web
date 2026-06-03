@@ -1,0 +1,171 @@
+<div class="diagram-section">
+
+    <div class="section-header">
+        <h2>Diagrama de Colaboración</h2>
+
+        <p>
+            El diagrama de colaboración muestra la interacción entre los objetos
+            involucrados en el proceso de gestión de producción, enfatizando
+            las relaciones estructurales y el intercambio de mensajes.
+        </p>
+    </div>
+
+    <div class="diagram-card">
+
+        <h3>Caso de Uso: Gestionar Producción</h3>
+
+        <div class="svg-container">
+
+            <svg viewBox="0 0 900 600">
+
+                <!-- Objetos -->
+
+                <rect x="50" y="50" width="150" height="60" rx="6" class="object-box" />
+                <text x="125" y="85" text-anchor="middle">
+                    :JefeProduccion
+                </text>
+
+                <rect x="350" y="50" width="150" height="60" rx="6" class="object-box" />
+                <text x="425" y="85" text-anchor="middle">
+                    :SistemaProduccion
+                </text>
+
+                <rect x="650" y="50" width="150" height="60" rx="6" class="object-box" />
+                <text x="725" y="85" text-anchor="middle">
+                    :Produccion
+                </text>
+
+                <rect x="200" y="250" width="150" height="60" rx="6" class="object-box" />
+                <text x="275" y="285" text-anchor="middle">
+                    :Producto
+                </text>
+
+                <rect x="500" y="250" width="150" height="60" rx="6" class="object-box" />
+                <text x="575" y="285" text-anchor="middle">
+                    :Inventario
+                </text>
+
+                <rect x="350" y="450" width="150" height="60" rx="6" class="object-box" />
+                <text x="425" y="485" text-anchor="middle">
+                    :BaseDatos
+                </text>
+
+                <!-- Flechas -->
+
+                <defs>
+                    <marker id="arrow-col" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                        <polygon points="0 0, 10 3, 0 6" />
+                    </marker>
+                </defs>
+
+                <!-- 1 -->
+
+                <line x1="200" y1="80" x2="350" y2="80" marker-end="url(#arrow-col)" class="message-line" />
+
+                <text x="275" y="68" text-anchor="middle" class="message-text">
+                    1: iniciarRegistro()
+                </text>
+
+                <!-- 2 -->
+
+                <line x1="380" y1="110" x2="300" y2="250" marker-end="url(#arrow-col)" class="message-line" />
+
+                <text x="340" y="170" text-anchor="middle" class="message-text">
+                    2: obtenerProductos()
+                </text>
+
+                <!-- 3 -->
+
+                <line x1="500" y1="80" x2="650" y2="80" marker-end="url(#arrow-col)" class="message-line" />
+
+                <text x="575" y="68" text-anchor="middle" class="message-text">
+                    3: crear(datos)
+                </text>
+
+                <!-- 4 -->
+
+                <line x1="700" y1="110" x2="600" y2="250" marker-end="url(#arrow-col)" class="message-line" />
+
+                <text x="650" y="170" text-anchor="middle" class="message-text">
+                    4: actualizarStock()
+                </text>
+
+                <!-- 5 -->
+
+                <line x1="575" y1="310" x2="475" y2="450" marker-end="url(#arrow-col)" class="message-line" />
+
+                <text x="525" y="370" text-anchor="middle" class="message-text">
+                    5: guardarStock()
+                </text>
+
+                <!-- 6 -->
+
+                <line x1="650" y1="100" x2="450" y2="450" marker-end="url(#arrow-col)" class="message-line" />
+
+                <text x="550" y="270" text-anchor="middle" class="message-text">
+                    6: guardarProduccion()
+                </text>
+
+                <!-- retorno -->
+
+                <line x1="350" y1="100" x2="200" y2="100" marker-end="url(#arrow-col)" class="return-line" />
+
+                <text x="275" y="120" text-anchor="middle" class="return-text">
+                    7: confirmarRegistro()
+                </text>
+
+            </svg>
+
+        </div>
+    </div>
+
+    <div class="info-grid">
+
+        <div class="info-card">
+
+            <h4>Características</h4>
+
+            <ul>
+                <li>
+                    Enfatiza las relaciones estructurales entre objetos.
+                </li>
+
+                <li>
+                    Los mensajes están numerados para indicar el orden temporal.
+                </li>
+
+                <li>
+                    Muestra la colaboración entre objetos para realizar una tarea.
+                </li>
+
+                <li>
+                    Complementa el diagrama de secuencia.
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="info-card">
+
+            <h4>Diferencias con Diagrama de Secuencia</h4>
+
+            <p>
+                <strong>Secuencia:</strong>
+                enfatiza el orden temporal de los mensajes.
+            </p>
+
+            <p>
+                <strong>Colaboración:</strong>
+                enfatiza las relaciones entre objetos.
+            </p>
+
+            <p>
+                Ambos diagramas representan el mismo escenario desde
+                perspectivas diferentes.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>

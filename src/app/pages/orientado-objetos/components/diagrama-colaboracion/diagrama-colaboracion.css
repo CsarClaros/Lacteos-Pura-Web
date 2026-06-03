@@ -1,0 +1,107 @@
+.diagram-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.section-header h2 {
+    margin-bottom: 1rem;
+    color: var(--texto-principal);
+}
+
+.section-header p {
+    color: var(--texto-secundario);
+    line-height: 1.7;
+}
+
+.diagram-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    overflow-x: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .08);
+}
+
+.diagram-card h3 {
+    margin-bottom: 1.5rem;
+    color: var(--texto-principal);
+}
+
+.svg-container {
+    min-width: 800px;
+}
+
+svg {
+    width: 100%;
+    height: auto;
+}
+
+.object-box {
+    fill: #10b981;
+    stroke: #059669;
+    stroke-width: 2;
+}
+
+svg text {
+    fill: white;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.message-line {
+    stroke: #059669;
+    stroke-width: 2;
+}
+
+.message-text {
+    fill: #047857;
+    font-size: 11px;
+}
+
+.return-line {
+    stroke: #9ca3af;
+    stroke-width: 2;
+    stroke-dasharray: 5 5;
+}
+
+.return-text {
+    fill: #6b7280;
+    font-size: 11px;
+}
+
+polygon {
+    fill: #059669;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.info-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .08);
+}
+
+.info-card h4 {
+    margin-bottom: 1rem;
+    color: var(--verde-oscuro);
+}
+
+.info-card ul {
+    padding-left: 1.2rem;
+}
+
+.info-card li {
+    margin-bottom: .75rem;
+    color: var(--texto-secundario);
+}
+
+.info-card p {
+    color: var(--texto-secundario);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}

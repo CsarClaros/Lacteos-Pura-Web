@@ -1,0 +1,434 @@
+<div class="min-h-screen">
+
+    <!-- HERO -->
+    <section
+        class="relative bg-gradient-to-br from-[var(--verde-oscuro)] via-[var(--verde-medio)] to-[var(--verde-claro)] text-white overflow-hidden">
+
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="
+            background-image:url('data:image/svg+xml,%3Csvg width=%2760%27 height=%2760%27 viewBox=%270 0 60 60%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cg fill=%27none%27 fill-rule=%27evenodd%27%3E%3Cg fill=%27%23ffffff%27 fill-opacity=%270.4%27%3E%3Cpath d=%27M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%27/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+          "></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                <div>
+                    <div class="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+                        <span class="text-sm font-medium">
+                            Proyecto Universitario • Análisis de Sistemas
+                        </span>
+                    </div>
+
+                    <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Lácteos Pura
+                        <span class="block text-[var(--verde-palido)] mt-2">
+                            Calidad Boliviana
+                        </span>
+                    </h1>
+
+                    <p class="text-xl text-[var(--verde-palido)] mb-8 leading-relaxed">
+                        Sistema integral de análisis y diseño para la gestión empresarial
+                        de una de las principales productoras de lácteos en Bolivia.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+
+                        <a routerLink="/dashboard"
+                            class="inline-flex items-center justify-center px-8 py-4 bg-white text-[var(--verde-oscuro)] rounded-xl hover:bg-[var(--verde-palido)] transition-all shadow-lg hover:shadow-xl">
+                            <span class="font-semibold">Ver Dashboard</span>
+
+                            <lucide-icon class="ml-2" [img]="ArrowRight" size="20">
+                            </lucide-icon>
+
+                        </a>
+
+                        <a routerLink="/marco-teorico"
+                            class="inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-xl hover:bg-white/20 transition-all border border-white/30">
+
+                            <lucide-icon class="mr-2" [img]="BookOpen" size="20">
+                            </lucide-icon>
+
+                            <span class="font-semibold">
+                                Marco Teórico
+                            </span>
+
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="relative">
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-[var(--verde-claro)]/30 to-transparent rounded-3xl blur-3xl">
+                    </div>
+
+                    <img src="https://images.unsplash.com/photo-1768850418251-17480117ac9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+                        alt="Productos Lácteos Pura"
+                        class="relative rounded-3xl shadow-2xl w-full object-cover aspect-square" />
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-[var(--crema)]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                @for (stat of stats; track $index) {
+
+                <div class="text-center">
+
+                    <div
+                        class="inline-flex items-center justify-center w-16 h-16 bg-[var(--verde-oscuro)] text-white rounded-2xl mb-4">
+                        <lucide-icon [img]="stat.icon" size="32">
+                        </lucide-icon>
+                    </div>
+
+                    <div class="text-4xl font-bold text-[var(--texto-principal)] mb-2">
+                        {{ stat.value }}
+                    </div>
+
+                    <div class="text-[var(--texto-descriptivo)]">
+                        {{ stat.label }}
+                    </div>
+
+                </div>
+
+                }
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Historia de la Empresa -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                <!-- Texto -->
+                <div>
+
+                    <h2 class="text-3xl lg:text-4xl font-bold text-[var(--texto-principal)] mb-6">
+                        Nuestra Historia
+                    </h2>
+
+                    <div class="space-y-4 text-[var(--texto-secundario)] leading-relaxed">
+
+                        <p>
+                            Fundada en 1985, Lácteos Pura nace con la visión de ofrecer
+                            productos lácteos de la más alta calidad a las familias bolivianas.
+                            Desde sus inicios en La Paz, la empresa ha crecido hasta convertirse
+                            en una de las principales productoras del país.
+                        </p>
+
+                        <p>
+                            Con más de tres décadas de experiencia, hemos desarrollado una red
+                            de distribución que alcanza todos los departamentos de Bolivia,
+                            garantizando frescura y calidad en cada producto.
+                        </p>
+
+                        <p>
+                            Nuestro compromiso con la innovación y la excelencia nos ha
+                            permitido expandir nuestra línea de productos, siempre manteniendo
+                            los más altos estándares de calidad y seguridad alimentaria.
+                        </p>
+
+                    </div>
+
+                    <!-- Features -->
+                    <div class="mt-8 flex flex-wrap gap-4">
+
+                        @for (feature of features; track $index) {
+
+                        <div class="flex items-center space-x-2 bg-[var(--verde-palido)] px-4 py-2 rounded-lg">
+
+                            <lucide-icon [img]="feature.icon" size="20" class="text-[var(--verde-oscuro)]">
+                            </lucide-icon>
+
+                            <span class="text-sm font-medium text-[var(--verde-oscuro)]">
+                                {{ feature.text }}
+                            </span>
+
+                        </div>
+
+                        }
+
+                    </div>
+
+                </div>
+
+                <!-- Imágenes -->
+                <div class="grid grid-cols-2 gap-4">
+
+                    <img src="https://images.unsplash.com/photo-1772990977842-55d675ce427e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+                        alt="Productos Lácteos" class="rounded-2xl shadow-lg object-cover h-64" />
+
+                    <img src="https://images.unsplash.com/photo-1776921712044-1affc97c81bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+                        alt="Productos Premium" class="rounded-2xl shadow-lg object-cover h-64 mt-8" />
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Proyecto Académico -->
+    <section class="py-20 bg-[var(--crema)]">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center mb-12">
+
+                <div class="inline-block bg-[var(--verde-palido)] px-4 py-2 rounded-full mb-4">
+                    <span class="text-sm font-medium text-[var(--verde-oscuro)]">
+                        Universidad Boliviana
+                    </span>
+                </div>
+
+                <h2 class="text-3xl lg:text-4xl font-bold text-[var(--texto-principal)] mb-4">
+                    Proyecto Académico
+                </h2>
+
+                <p class="text-xl text-[var(--texto-secundario)] max-w-3xl mx-auto">
+                    Análisis y Diseño de Sistemas aplicado a la gestión empresarial de
+                    Lácteos Pura
+                </p>
+
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl p-8 lg:p-12">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+
+                    <!-- Objetivo -->
+                    <div>
+
+                        <h3 class="text-2xl font-bold text-[var(--texto-principal)] mb-4">
+                            Objetivo del Proyecto
+                        </h3>
+
+                        <p class="text-[var(--texto-secundario)] leading-relaxed mb-4">
+                            Desarrollar un sistema integral de análisis y diseño que optimice
+                            los procesos de gestión, producción, inventario, ventas y
+                            distribución de la empresa Lácteos Pura.
+                        </p>
+
+                        <p class="text-[var(--texto-secundario)] leading-relaxed">
+                            Este proyecto aplica metodologías de análisis estructurado y
+                            orientado a objetos para crear una solución tecnológica adaptada
+                            a las necesidades específicas de la industria láctea boliviana.
+                        </p>
+
+                    </div>
+
+                    <!-- Metodología -->
+                    <div>
+
+                        <h3 class="text-2xl font-bold text-[var(--texto-principal)] mb-4">
+                            Metodología
+                        </h3>
+
+                        <ul class="space-y-3">
+
+                            @for (item of methodology; track $index) {
+
+                            <li class="flex items-start space-x-3">
+
+                                <lucide-icon [img]="CheckCircle" size="20"
+                                    class="text-[var(--verde-claro)] mt-1 flex-shrink-0">
+                                </lucide-icon>
+
+                                <span class="text-[var(--texto-secundario)]">
+                                    {{ item }}
+                                </span>
+
+                            </li>
+
+                            }
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Modelos de Análisis -->
+    <section class="py-20 bg-white">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center mb-16">
+
+                <h2 class="text-3xl lg:text-4xl font-bold text-[var(--texto-principal)] mb-4">
+                    Modelos de Análisis
+                </h2>
+
+                <p class="text-xl text-[var(--texto-secundario)] max-w-3xl mx-auto">
+                    Enfoques complementarios para el análisis y diseño del sistema
+                </p>
+
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                @for (model of models; track $index) {
+
+                <a [routerLink]="model.link"
+                    class="group bg-white border-2 border-[var(--verde-palido)] rounded-2xl p-8 hover:border-[var(--verde-claro)] hover:shadow-xl transition-all block">
+
+                    <div class="inline-flex items-center justify-center w-16 h-16 text-white rounded-2xl mb-6 group-hover:scale-110 transition-transform"
+                        [class]="model.color">
+
+                        <lucide-icon [img]="model.icon" size="32">
+                        </lucide-icon>
+
+                    </div>
+
+                    <h3 class="text-xl font-bold text-[var(--texto-principal)] mb-3">
+                        {{ model.title }}
+                    </h3>
+
+                    <p class="text-[var(--texto-secundario)] leading-relaxed mb-4">
+                        {{ model.description }}
+                    </p>
+
+                    <div class="flex items-center text-[var(--verde-oscuro)] font-medium">
+
+                        <span>Ver detalles</span>
+
+                        <lucide-icon [img]="ArrowRight" size="18" class="ml-2">
+                        </lucide-icon>
+
+                    </div>
+
+                </a>
+
+                }
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Dashboard Preview -->
+    <section class="py-20 bg-gradient-to-br from-[var(--verde-palido)] to-[var(--crema)]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-[var(--texto-principal)] mb-4">
+                    Dashboard Empresarial
+                </h2>
+
+                <p class="text-xl text-[var(--texto-secundario)] max-w-3xl mx-auto mb-8">
+                    Sistema completo de gestión con visualización en tiempo real de KPIs,
+                    producción, inventario y ventas.
+                </p>
+
+                <a routerLink="/dashboard"
+                    class="inline-flex items-center justify-center px-8 py-4 bg-[var(--verde-oscuro)] text-white rounded-xl hover:bg-[var(--verde-medio)] transition-all shadow-lg hover:shadow-xl">
+                    Acceder al Dashboard
+                </a>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border-8 border-white">
+
+                <!-- Barra superior -->
+                <div class="bg-[var(--verde-oscuro)] px-6 py-4 flex items-center space-x-2">
+                    <div class="flex space-x-2">
+                        <div class="w-3 h-3 bg-red-400 rounded-full"></div>
+                        <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                        <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+                    </div>
+
+                    <div class="flex-1 text-center">
+                        <span class="text-white/70 text-sm">
+                            dashboard.lacteospura.bo
+                        </span>
+                    </div>
+                </div>
+
+                <div class="p-8 bg-gradient-to-br from-gray-50 to-gray-100">
+
+                    <!-- KPIs -->
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+
+                        <div class="bg-white rounded-xl p-4 shadow">
+                            <div class="w-10 h-10 bg-blue-500 rounded-lg mb-2"></div>
+                            <div class="text-2xl font-bold text-gray-800">12,450 L</div>
+                            <div class="text-sm text-gray-500">Producción Hoy</div>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-4 shadow">
+                            <div class="w-10 h-10 bg-green-500 rounded-lg mb-2"></div>
+                            <div class="text-2xl font-bold text-gray-800">89%</div>
+                            <div class="text-sm text-gray-500">Inventario</div>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-4 shadow">
+                            <div class="w-10 h-10 bg-purple-500 rounded-lg mb-2"></div>
+                            <div class="text-2xl font-bold text-gray-800">Bs 245K</div>
+                            <div class="text-sm text-gray-500">Ventas Mes</div>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-4 shadow">
+                            <div class="w-10 h-10 bg-orange-500 rounded-lg mb-2"></div>
+                            <div class="text-2xl font-bold text-gray-800">156</div>
+                            <div class="text-sm text-gray-500">Entregas</div>
+                        </div>
+
+                    </div>
+
+                    <!-- Gráficos -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                        <div class="bg-white rounded-xl p-6 shadow h-48">
+                            <div class="text-sm font-medium text-gray-500 mb-4">
+                                Producción Semanal
+                            </div>
+
+                            <div class="h-32 bg-gradient-to-t from-[var(--verde-claro)]/20 to-transparent rounded">
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 shadow h-48">
+                            <div class="text-sm font-medium text-gray-500 mb-4">
+                                Distribución por Producto
+                            </div>
+
+                            <div class="h-32 flex items-end justify-around">
+
+                                <div class="w-12 bg-[var(--verde-medio)] rounded-t h-[60%]"></div>
+                                <div class="w-12 bg-[var(--verde-medio)] rounded-t h-[80%]"></div>
+                                <div class="w-12 bg-[var(--verde-medio)] rounded-t h-[45%]"></div>
+                                <div class="w-12 bg-[var(--verde-medio)] rounded-t h-[90%]"></div>
+                                <div class="w-12 bg-[var(--verde-medio)] rounded-t h-[70%]"></div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+</div>

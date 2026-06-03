@@ -1,0 +1,70 @@
+<section class="uml-page">
+
+    <!-- HERO -->
+
+    <header class="hero">
+
+        <div class="hero-badge">
+            <lucide-icon [img]="BoxIcon"></lucide-icon>
+            <span>Metodología UML</span>
+        </div>
+
+        <h1>Análisis Orientado a Objetos</h1>
+
+        <p>
+            Modelado del sistema mediante casos de uso, diagramas de clases,
+            diagramas de secuencia y diagramas de colaboración.
+        </p>
+
+    </header>
+
+    <!-- TABS -->
+
+    <section class="tabs-container">
+
+        <div class="tabs-header">
+
+            @for (tab of tabs; track tab.id) {
+
+            <button class="tab-button" [class.active]="activeTab() === tab.id" (click)="changeTab(tab.id)">
+
+                <lucide-icon [img]="tab.icon" size="18">
+                </lucide-icon>
+
+                <span>
+                    {{ tab.label }}
+                </span>
+
+            </button>
+
+            }
+
+        </div>
+
+        <div class="tabs-content">
+
+            @switch (activeTab()) {
+
+            @case ('casos-uso') {
+            <app-casos-uso />
+            }
+
+            @case ('diagrama-clases') {
+            <app-diagrama-clases />
+            }
+
+            @case ('diagrama-secuencia') {
+            <app-diagrama-secuencia />
+            }
+
+            @case ('diagrama-colaboracion') {
+            <app-diagrama-colaboracion />
+            }
+
+            }
+
+        </div>
+
+    </section>
+
+</section>

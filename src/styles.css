@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+:root {
+  --verde-oscuro: #1a4d2e;
+  --verde-medio: #2d7a3a;
+  --verde-claro: #4caf65;
+  --verde-palido: #e8f5e9;
+  --crema: #faf8f3;
+
+  --texto-principal: #1c2b1e;
+  --texto-secundario: #3a5040;
+  --texto-descriptivo: #5a7060;
+}
+
+body {
+  margin: 0;
+  color: var(--texto-principal);
+}
