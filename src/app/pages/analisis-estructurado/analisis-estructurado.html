@@ -253,6 +253,7 @@
                         </h2>
 
                         <div
+                            (click)="abrirModal()"
                             class="group w-full md:w-1/2 mx-auto bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl p-6 hover:border-purple-400 hover:shadow-xl transition-all cursor-pointer">
 
                             <div class="flex items-start justify-between mb-4">
@@ -287,7 +288,7 @@
 
                             </p>
 
-                            <button type="button"
+                            <button type="button" (click)="abrirModal()"
                                 class="inline-flex items-center text-sm text-purple-600 font-medium group-hover:translate-x-1 transition-transform">
 
                                 <lucide-angular [img]="Maximize2" class="w-4 h-4 mr-2">
@@ -307,15 +308,15 @@
                         <h2 class="text-3xl font-bold text-[var(--texto-principal)] mb-6">
                             C) Lista de Acontecimientos
                         </h2>
-                    
+
                         <p class="text-[var(--texto-secundario)] mb-8 leading-relaxed">
                             Los acontecimientos representan los eventos externos que interactúan con el
                             Sistema Integrado de Gestión Agroindustrial de Lácteos Pura y generan una
                             respuesta por parte del sistema.
                         </p>
-                    
+
                         <div class="space-y-6 text-[var(--texto-secundario)] leading-relaxed">
-                    
+
                             <div>
                                 <h3 class="font-bold text-[var(--texto-principal)] mb-2">
                                     1. Reportes de producción
@@ -327,7 +328,7 @@
                                     la toma de decisiones.
                                 </p>
                             </div>
-                    
+
                             <div>
                                 <h3 class="font-bold text-[var(--texto-principal)] mb-2">
                                     2. Datos de materia prima
@@ -339,7 +340,7 @@
                                     el inventario de materias primas.
                                 </p>
                             </div>
-                    
+
                             <div>
                                 <h3 class="font-bold text-[var(--texto-principal)] mb-2">
                                     3. Registro de producción
@@ -350,7 +351,7 @@
                                     cantidad producida y materias primas utilizadas.
                                 </p>
                             </div>
-                    
+
                             <div>
                                 <h3 class="font-bold text-[var(--texto-principal)] mb-2">
                                     4. Solicitud de productos
@@ -361,7 +362,7 @@
                                     existente en inventario antes de proceder con la venta o distribución.
                                 </p>
                             </div>
-                    
+
                             <div>
                                 <h3 class="font-bold text-[var(--texto-principal)] mb-2">
                                     5. Control de inventario
@@ -372,7 +373,7 @@
                                     inventarios físicos o se detecten diferencias en el stock registrado.
                                 </p>
                             </div>
-                    
+
                             <div>
                                 <h3 class="font-bold text-[var(--texto-principal)] mb-2">
                                     6. Registro de ventas
@@ -383,7 +384,7 @@
                                     y generar información para los reportes administrativos.
                                 </p>
                             </div>
-                    
+
                             <div>
                                 <h3 class="font-bold text-[var(--texto-principal)] mb-2">
                                     7. Datos de distribución
@@ -394,7 +395,7 @@
                                     de los productos despachados y entregados.
                                 </p>
                             </div>
-                    
+
                             <div>
                                 <h3 class="font-bold text-[var(--texto-principal)] mb-2">
                                     8. Reportes de control y trazabilidad
@@ -406,11 +407,11 @@
                                     elaborados por la empresa.
                                 </p>
                             </div>
-                    
+
                         </div>
-                    
+
                     </section>
-                    
+
                 </section>
 
 
@@ -646,3 +647,41 @@
     </div>
 
 </div>
+
+
+@if (modalAbierto) {
+
+    <div
+        class="fixed inset-0 z-50 flex items-center justify-center p-4">
+    
+        <!-- Fondo -->
+    
+        <div
+            class="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            (click)="cerrarModal()">
+        </div>
+    
+        <!-- Modal -->
+    
+        <div
+            @modalFade
+            class="relative bg-white rounded-2xl shadow-2xl overflow-hidden max-w-6xl w-full">
+    
+            <button
+                (click)="cerrarModal()"
+                class="absolute top-4 right-4 z-10 bg-white rounded-full p-2 shadow">
+    
+                ✕
+    
+            </button>
+    
+            <img
+                src="assets/images/diagrama_Contexto.webp"
+                alt="Diagrama"
+                class="w-full h-auto max-h-[90vh] object-contain">
+    
+        </div>
+    
+    </div>
+    
+}

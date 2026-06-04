@@ -8,6 +8,13 @@ import {
   Download
 } from 'lucide-angular';
 
+import {
+  trigger,
+  transition,
+  style,
+  animate
+} from '@angular/animations';
+
 interface DfdDiagram {
   id: string;
   title: string;
@@ -23,7 +30,43 @@ interface DfdDiagram {
     LucideAngularModule
   ],
   templateUrl: './analisis-estructurado.html',
-  styleUrl: './analisis-estructurado.css'
+  styleUrl: './analisis-estructurado.css',
+  animations: [
+
+    trigger('modalFade', [
+
+      transition(':enter', [
+
+        style({
+          opacity: 0,
+          transform: 'translateY(20px) scale(0.95)'
+        }),
+
+        animate(
+          '300ms ease-out',
+          style({
+            opacity: 1,
+            transform: 'translateY(0) scale(1)'
+          })
+        )
+
+      ]),
+
+      transition(':leave', [
+
+        animate(
+          '300ms ease-in',
+          style({
+            opacity: 0,
+            transform: 'translateY(20px) scale(0.95)'
+          })
+        )
+
+      ])
+
+    ])
+
+  ]
 })
 export class AnalisisEstructurado {
 
@@ -88,4 +131,18 @@ export class AnalisisEstructurado {
       ]
     }
   ];
+
+modalVisible = false;
+modalAnimado = false;
+
+modalAbierto = false;
+
+abrirModal(): void {
+  this.modalAbierto = true;
+}
+
+cerrarModal(): void {
+  this.modalAbierto = false;
+}
+
 }
