@@ -6,7 +6,13 @@ import {
   GitBranch,
   Box,
   Database,
-  ChevronRight
+  ChevronRight,
+  Factory,
+  Target,
+  Workflow,
+  ClipboardList,
+  TriangleAlert,
+  CircleHelp
 } from 'lucide-angular';
 
 @Component({
@@ -24,6 +30,12 @@ export class MarcoTeorico {
   readonly Box = Box;
   readonly Database = Database;
   readonly ChevronRight = ChevronRight;
+  readonly Factory = Factory;
+  readonly Target = Target
+  readonly Workflow = Workflow
+  readonly ClipboardList = ClipboardList
+  readonly TriangleAlert = TriangleAlert
+  readonly CircleHelp = CircleHelp;
 
   activeSection = 'introduccion';
 
