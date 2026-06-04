@@ -46,24 +46,34 @@ export class MarcoTeorico {
       icon: this.BookOpen
     },
     {
-      id: 'analisis-sistemas',
-      title: 'Análisis de Sistemas',
-      icon: this.FileText
+      id: 'antecedentes',
+      title: 'Antecedentes',
+      icon: this.Factory
     },
     {
-      id: 'modelo-estructurado',
-      title: 'Modelo Estructurado',
+      id: 'arbol-problemas',
+      title: 'Árbol de Problemas',
       icon: this.GitBranch
     },
     {
-      id: 'modelo-objetos',
-      title: 'Modelo Orientado a Objetos',
-      icon: this.Box
+      id: 'formulacion-problema',
+      title: 'Formulación del Problema',
+      icon: this.CircleHelp
     },
     {
-      id: 'bases-datos',
-      title: 'Bases de Datos',
-      icon: this.Database
+      id: 'proposito-estudio',
+      title: 'Proposito del Estudio',
+      icon: this.Target
+    },
+    {
+      id: 'metodologia',
+      title: 'Metodología',
+      icon: this.Workflow
+    },
+    {
+      id: 'planificacion-actividades',
+      title: 'Planificación de Actividades',
+      icon: this.ClipboardList
     }
   ];
 
