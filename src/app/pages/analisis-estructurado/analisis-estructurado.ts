@@ -5,7 +5,11 @@ import {
   Database,
   Layers,
   Maximize2,
-  Download
+  Download,
+  BookOpen,
+  Target,
+  ClipboardList,
+  CircleHelp
 } from 'lucide-angular';
 
 import {
@@ -21,6 +25,13 @@ interface DfdDiagram {
   level: string;
   description: string;
   color: string;
+  image: string;
+}
+
+interface ErDiagram{
+  id: string;
+  title: string;
+  image: string;
 }
 
 @Component({
@@ -71,12 +82,54 @@ interface DfdDiagram {
 export class AnalisisEstructurado {
 
   readonly GitBranch = GitBranch;
+  readonly BookOpen = BookOpen;
   readonly Database = Database;
   readonly Layers = Layers;
   readonly Maximize2 = Maximize2;
   readonly Download = Download;
+  readonly Target = Target;
+  readonly ClipboardList = ClipboardList;
+  readonly CircleHelp = CircleHelp;
 
-  selectedDiagram: string | null = null;
+  activeSection = 'introduccion';
+
+  sections = [
+    {
+      id: 'introduccion',
+      title: 'Introducción',
+      icon: this.BookOpen
+    },
+    {
+      id: 'objetivo',
+      title: 'Objetivo',
+      icon: this.Target
+    },
+    {
+      id: 'situacion',
+      title: 'Situación',
+      icon: this.CircleHelp
+    },
+    {
+      id: 'modelo-ambiental',
+      title: 'Modelo Ambiental',
+      icon: this.ClipboardList
+    },
+    {
+      id: 'modelo-comportamiento',
+      title: 'Modelo de Comportamiento',
+      icon: this.GitBranch
+    },
+    {
+      id: 'entidad-relacion',
+      title: 'Diagrama Entidad - Relación',
+      icon: this.Database
+    }
+  ];
+
+
+
+
+  selectedDiagram: DfdDiagram | ErDiagram | null = null;
 
   dfdDiagrams: DfdDiagram[] = [
     {
@@ -84,33 +137,111 @@ export class AnalisisEstructurado {
       title: 'Diagrama de Contexto',
       level: 'Nivel 0',
       description: 'Vista general del sistema y sus entidades externas',
-      color: 'bg-blue-500'
+      color: 'bg-blue-500',
+      image: 'assets/images/diagrama_Contexto.webp'
     },
     {
       id: 'nivel1',
       title: 'DFD Nivel 1',
       level: 'Nivel 1',
       description: 'Descomposición de procesos principales del sistema',
-      color: 'bg-purple-500'
+      color: 'bg-purple-500',
+      image: 'assets/images/DFD_nivel1.webp'
     },
     {
       id: 'produccion',
-      title: 'Proceso de Producción',
+      title: 'DFD Nivel 2 - Proceso 1',
       level: 'Nivel 2',
-      description: 'Detalle del flujo de datos en la gestión de producción',
-      color: 'bg-green-500'
+      description: 'Gestión de producción',
+      color: 'bg-green-500',
+      image: 'assets/images/DFD_nivel2_p1.webp'
+    },
+    {
+      id: 'inventarios',
+      title: 'DFD Nivel 2 - Proceso 2',
+      level: 'Nivel 2',
+      description: 'Gestión de inventarios',
+      color: 'bg-orange-500',
+      image: 'assets/images/DFD_nivel2_p2.webp'
     },
     {
       id: 'ventas',
-      title: 'Proceso de Ventas',
+      title: 'DFD Nivel 2 - Proceso 3',
       level: 'Nivel 2',
-      description: 'Detalle del flujo de datos en el proceso de ventas',
-      color: 'bg-orange-500'
+      description: 'Gestión de ventas',
+      color: 'bg-yellow-500',
+      image: 'assets/images/DFD_nivel2_p3.webp'
+    },
+    {
+      id: 'proved_compras',
+      title: 'DFD Nivel 2 - Proceso 4',
+      level: 'Nivel 2',
+      description: 'Gestión proveedores y compras',
+      color: 'bg-red-500',
+      image: 'assets/images/DFD_nivel2_p4.webp'
+    },
+    {
+      id: 'clientes',
+      title: 'DFD Nivel 2 - Proceso 5',
+      level: 'Nivel 2',
+      description: 'Gestión clientes',
+      color: 'bg-orange-500',
+      image: 'assets/images/DFD_nivel2_p5.webp'
+    },
+    {
+      id: 'operarios',
+      title: 'DFD Nivel 2 - Proceso 6',
+      level: 'Nivel 2',
+      description: 'Gestión operarios',
+      color: 'bg-indigo-500',
+      image: 'assets/images/DFD_nivel2_p6.webp'
+    },
+    {
+      id: 'reportes',
+      title: 'DFD Nivel 2 - Proceso 7',
+      level: 'Nivel 2',
+      description: 'Gestión reportes',
+      color: 'bg-blue-400',
+      image: 'assets/images/DFD_nivel2_p7.webp'
+    },
+    {
+      id: 'usuarios',
+      title: 'DFD Nivel 2 - Proceso 8',
+      level: 'Nivel 2',
+      description: 'Gestión usuarios',
+      color: 'bg-green-300',
+      image: 'assets/images/DFD_nivel2_p8.webp'
     }
   ];
 
-  selectDiagram(id: string): void {
-    this.selectedDiagram = id;
+
+erDiagram: ErDiagram[] = [
+  {
+    id: 'entidad-relacion',
+    title: 'Diagrama Entidad - Relacion',
+    image: 'assets/images/Diagrama_ER.webp'
+  },
+]
+
+  // selectDiagram(id: string): void {
+  //   this.selectedDiagram = id;
+  // }
+
+  selectDiagram(id: string): void{
+    const dfd = this.dfdDiagrams.find(d => d.id === id);
+
+    if(dfd){
+      this.selectedDiagram = dfd;
+      this.modalAbierto = true;
+      return;
+    }
+
+    const er = this.erDiagram.find(d => d.id === id);
+
+    if(er){
+      this.selectedDiagram = er;
+      this.modalAbierto = true;
+    }
   }
 
   flowGroups = [
@@ -132,8 +263,18 @@ export class AnalisisEstructurado {
     }
   ];
 
-modalVisible = false;
-modalAnimado = false;
+  scrollToSection(id: string) {
+    this.activeSection = id;
+
+    const element = document.getElementById(id);
+
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  }
 
 modalAbierto = false;
 
@@ -143,6 +284,7 @@ abrirModal(): void {
 
 cerrarModal(): void {
   this.modalAbierto = false;
+  this.selectedDiagram = null;
 }
 
 }

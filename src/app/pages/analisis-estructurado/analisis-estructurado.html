@@ -36,13 +36,27 @@
                         Contenido
                     </h2>
 
+                    <nav class="space-y-2">
+                        @for (section of sections; track section.id) {
 
+                            <button (click)="scrollToSection(section.id)"
+                            class="w-full text-left px-4 py-3 rounded-lg transition-all flex items-center space-x-3"
+                            [class.bg-[var(--verde-oscuro)]]="activeSection === section.id"
+                            [class.text-white]="activeSection === section.id">
 
+                            <lucide-angular [img]="section.icon" class="w-4 h-4"></lucide-angular>
+
+                            <span class="tezt-sm">
+                                {{ section.title }}
+                            </span>
+                            </button>
+                        }
+                    </nav>
                 </div>
             </aside>
 
             <main class="lg:col-span-3 space-y-8">
-                <section id="introduccion" class="bg-white rounded-2xl shadow-lg p-8 lg:p-12 mb-12">
+                <section id="introduccion" class="bg-white rounded-2xl shadow-lg p-8 lg:p-12 mb-12 scroll-mt-24">
 
                     <h2 class="text-3xl font-bold text-[var(--texto-principal)] mb-6">
                         Introducción
@@ -77,7 +91,7 @@
 
                 <!-- Objetivo del Analisis -->
 
-                <section id="objetivo" class="bg-white rounded-2xl shadow-lg p-8 lg:p-12 mb-12">
+                <section id="objetivo" class="bg-white rounded-2xl shadow-lg p-8 lg:p-12 mb-12 scroll-mt-24">
 
                     <h2 class="text-3xl font-bold text-[var(--texto-principal)] mb-6">
                         Objetivo del Análisis
@@ -95,7 +109,7 @@
 
                 <!-- Situacion Actual -->
 
-                <section id="situacion" class="bg-white rounded-2xl shadow-lg p-8 lg:p-12 mb-12">
+                <section id="situacion" class="bg-white rounded-2xl shadow-lg p-8 lg:p-12 mb-12 scroll-mt-24">
 
                     <h2 class="text-3xl font-bold text-[var(--texto-principal)] mb-6">
                         Situación Actual
@@ -156,7 +170,7 @@
                 </section>
 
 
-                <section id="modelo-ambiental" class="bg-white rounded-2xl shadow-lg p-8 lg:p-12 mb-12">
+                <section id="modelo-ambiental" class="bg-white rounded-2xl shadow-lg p-8 lg:p-12 mb-12 scroll-mt-24">
 
                     <h2 class="text-3xl font-bold text-[var(--texto-principal)] mb-6">
                         Modelo Ambiental
@@ -252,8 +266,7 @@
                             B) Diagrama de Contexto
                         </h2>
 
-                        <div
-                            (click)="abrirModal()"
+                        <div (click)="selectDiagram(dfdDiagrams[0].id)"
                             class="group w-full md:w-1/2 mx-auto bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl p-6 hover:border-purple-400 hover:shadow-xl transition-all cursor-pointer">
 
                             <div class="flex items-start justify-between mb-4">
@@ -418,7 +431,7 @@
                 <!-- DFD Section -->
 
 
-                <section class="mb-12">
+                <section id="modelo-comportamiento" class="bg-white rounded-2xl shadow-lg p-8 lg:p-12 mb-12 scroll-mt-24">
 
                     <div class="bg-white rounded-2xl shadow-lg p-8 lg:p-12 mb-8">
 
@@ -511,7 +524,7 @@
                 </section>
 
                 <!-- DER Section -->
-                <section class="bg-white rounded-2xl shadow-lg p-8 lg:p-12">
+                <section id="entidad-relacion" class="bg-white rounded-2xl shadow-lg p-8 lg:p-12 scroll-mt-24">
 
                     <div class="flex items-center space-x-3 mb-6">
 
@@ -639,6 +652,47 @@
 
                     </div>
 
+
+                    <div (click)="selectDiagram(erDiagram[0].id)"
+                        class="group w-full md:w-1/2 mx-auto bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl p-6 hover:border-purple-400 hover:shadow-xl transition-all cursor-pointer">
+
+                        <div class="flex items-start justify-between mb-4">
+
+
+
+                            <div class="w-12 h-12 text-white rounded-lg flex items-center justify-center bg-blue-500"
+                                [class]="' w-12 h-12 text-white rounded-lg flex items-center justify-center'">
+
+                                <lucide-angular [img]="Database" class="w-6 h-6">
+                                </lucide-angular>
+
+                            </div>
+
+
+
+                        </div>
+
+                        <h3 class="text-xl font-bold text-[var(--texto-principal)] mb-2">
+
+                            {{ erDiagram[0].title }}
+
+                        </h3>
+
+
+                        <button type="button"
+                            class="inline-flex items-center text-sm text-purple-600 font-medium group-hover:translate-x-1 transition-transform">
+
+                            <lucide-angular [img]="Maximize2" class="w-4 h-4 mr-2">
+                            </lucide-angular>
+
+                            Ver diagrama
+
+                        </button>
+
+
+
+                    </div>
+
                 </section>
             </main>
 
@@ -651,37 +705,30 @@
 
 @if (modalAbierto) {
 
-    <div
-        class="fixed inset-0 z-50 flex items-center justify-center p-4">
-    
-        <!-- Fondo -->
-    
-        <div
-            class="absolute inset-0 bg-black/80 backdrop-blur-sm"
-            (click)="cerrarModal()">
-        </div>
-    
-        <!-- Modal -->
-    
-        <div
-            @modalFade
-            class="relative bg-white rounded-2xl shadow-2xl overflow-hidden max-w-6xl w-full">
-    
-            <button
-                (click)="cerrarModal()"
-                class="absolute top-4 right-4 z-10 bg-white rounded-full p-2 shadow">
-    
-                ✕
-    
-            </button>
-    
-            <img
-                src="assets/images/diagrama_Contexto.webp"
-                alt="Diagrama"
-                class="w-full h-auto max-h-[90vh] object-contain">
-    
-        </div>
-    
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4">
+
+    <!-- Fondo -->
+
+    <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" (click)="cerrarModal()">
     </div>
-    
+
+    <!-- Modal -->
+
+    <div @modalFade class="relative bg-white rounded-2xl shadow-2xl overflow-hidden max-w-6xl w-full">
+
+        <button (click)="cerrarModal()" class="absolute top-4 right-4 z-10 bg-white rounded-full p-2 shadow">
+
+            ✕
+
+        </button>
+
+        @if (selectedDiagram) {
+        <img [src]="selectedDiagram.image" [alt]="selectedDiagram.title"
+            class="w-full h-auto max-h-[90vh] object-contain">
+        }
+
+    </div>
+
+</div>
+
 }

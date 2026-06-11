@@ -31,10 +31,10 @@ export class MarcoTeorico {
   readonly Database = Database;
   readonly ChevronRight = ChevronRight;
   readonly Factory = Factory;
-  readonly Target = Target
-  readonly Workflow = Workflow
-  readonly ClipboardList = ClipboardList
-  readonly TriangleAlert = TriangleAlert
+  readonly Target = Target;
+  readonly Workflow = Workflow;
+  readonly ClipboardList = ClipboardList;
+  readonly TriangleAlert = TriangleAlert;
   readonly CircleHelp = CircleHelp;
 
   activeSection = 'introduccion';
