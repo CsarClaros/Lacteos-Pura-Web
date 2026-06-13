@@ -5,6 +5,7 @@ import { Dashboard } from './pages/dashboard/dashboard';
 import { AnalisisEstructurado } from './pages/analisis-estructurado/analisis-estructurado';
 import { MarcoTeorico } from './pages/marco-teorico/marco-teorico';
 import { OrientadoObjetos } from './pages/orientado-objetos/orientado-objetos';
+import { Login } from './pages/login/login';
 
 export const routes: Routes = [
     {
@@ -16,15 +17,19 @@ export const routes: Routes = [
         component: Dashboard
     },
     {
-        path: 'analisis-estructurado',
-        component: AnalisisEstructurado
-    },
-    {
         path: 'marco-teorico',
         component: MarcoTeorico
     },
     {
         path: 'orientado-objetos',
         component: OrientadoObjetos
-    }
+    },
+    {
+        path: 'login',
+        component: Login
+    },
+    {
+        path: 'analisis-estructurado',
+        component: AnalisisEstructurado
+    },
 ];

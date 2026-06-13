@@ -1,0 +1,295 @@
+<div class="min-h-screen bg-[var(--crema)] flex items-center justify-center px-4 py-8
+         bg-[radial-gradient(ellipse_at_top_left,_rgba(45,122,58,0.12),transparent_55%),
+             radial-gradient(ellipse_at_bottom_right,_rgba(76,175,101,0.10),transparent_55%)]">
+
+    <div class="w-full max-w-6xl bg-white rounded-3xl overflow-hidden shadow-2xl border border-[var(--verde-palido)]">
+
+        <div class="grid lg:grid-cols-2">
+
+            <!-- PANEL IZQUIERDO -->
+            <div
+                class="hidden lg:flex relative overflow-hidden bg-gradient-to-br from-[var(--verde-oscuro)] to-[var(--verde-medio)] text-white">
+
+                <div class="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-white/5">
+                </div>
+
+                <div class="absolute -bottom-16 -left-16 w-56 h-56 rounded-full bg-white/5">
+                </div>
+
+                <div class="relative z-10 flex flex-col justify-center px-12 py-16">
+
+                    <div
+                        class="w-20 h-20 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mb-8">
+
+                        <lucide-angular [img]="Building2" class="w-10 h-10">
+                        </lucide-angular>
+
+                    </div>
+
+                    <span class="uppercase tracking-[0.3em] text-sm text-white/70 font-medium">
+
+                        Sistema Integrado
+                    </span>
+
+                    <h1 class="font-serif text-5xl font-bold mt-4 mb-6 leading-tight">
+
+                        SIGA-LP
+                    </h1>
+
+                    <p class="text-lg text-white/80 leading-relaxed max-w-md">
+
+                        Sistema Integrado de Gestión Agroindustrial para
+                        <strong>Lácteos Pura</strong>.
+
+                        Administra producción, inventario, ventas y distribución
+                        desde una única plataforma.
+                    </p>
+
+                    <div class="mt-12 space-y-5">
+
+                        <div class="flex items-center gap-4">
+
+                            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
+
+                                <lucide-angular [img]="ShieldCheck" class="w-5 h-5">
+                                </lucide-angular>
+
+                            </div>
+
+                            <span class="text-white/80">
+                                Acceso seguro por roles
+                            </span>
+
+                        </div>
+
+                        <div class="flex items-center gap-4">
+
+                            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
+
+                                <lucide-angular [img]="User" class="w-5 h-5">
+                                </lucide-angular>
+
+                            </div>
+
+                            <span class="text-white/80">
+                                Gestión centralizada de usuarios
+                            </span>
+
+                        </div>
+
+                        <div class="flex items-center gap-4">
+
+                            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
+
+                                <lucide-angular [img]="LogIn" class="w-5 h-5">
+                                </lucide-angular>
+
+                            </div>
+
+                            <span class="text-white/80">
+                                Plataforma preparada para crecer
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PANEL DERECHO -->
+            <div class="flex items-center justify-center px-6 py-10 sm:px-10 lg:px-14">
+
+                <div class="w-full max-w-md">
+
+                    <!-- Versión móvil -->
+                    <div class="lg:hidden text-center mb-10">
+
+                        <div
+                            class="mx-auto w-16 h-16 rounded-2xl bg-[var(--verde-oscuro)] text-white flex items-center justify-center mb-4">
+
+                            <lucide-angular [img]="Building2" class="w-8 h-8">
+                            </lucide-angular>
+
+                        </div>
+
+                        <h1 class="font-serif text-4xl font-bold text-[var(--texto-principal)]">
+
+                            SIGA-LP
+                        </h1>
+
+                        <p class="text-[var(--texto-secundario)] mt-2">
+
+                            Sistema Integrado de Gestión Agroindustrial
+                        </p>
+
+                    </div>
+
+                    <div class="mb-8">
+
+                        <h2 class="text-3xl font-bold text-[var(--texto-principal)]">
+
+                            Bienvenido
+                        </h2>
+
+                        <p class="text-[var(--texto-secundario)] mt-2">
+
+                            Inicia sesión para acceder al sistema.
+                        </p>
+
+                    </div>
+
+                    <!-- ERROR -->
+                    @if (error) {
+
+                    <div
+                        class="mb-6 flex items-center gap-3 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-red-700">
+
+                        <lucide-angular [img]="ShieldCheck" class="w-5 h-5">
+                        </lucide-angular>
+
+                        <span class="text-sm">
+                            {{ error }}
+                        </span>
+
+                    </div>
+
+                    }
+
+                    <!-- USUARIO -->
+                    <div class="mb-5">
+
+                        <label class="block mb-2 text-sm font-medium text-[var(--texto-secundario)]">
+
+                            Usuario
+                        </label>
+
+                        <div class="relative">
+
+                            <lucide-angular [img]="User"
+                                class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400">
+                            </lucide-angular>
+
+                            <input type="text" [(ngModel)]="usuario" (keydown.enter)="login()" placeholder="Ej: admin01"
+                                autocomplete="username" class="w-full rounded-xl border border-[var(--verde-palido)]
+                       bg-[var(--crema)]
+                       py-3 pl-12 pr-4
+                       focus:outline-none
+                       focus:ring-2
+                       focus:ring-[var(--verde-claro)]
+                       focus:border-transparent">
+
+                        </div>
+
+                    </div>
+
+                    <!-- CONTRASEÑA -->
+                    <div class="mb-6">
+
+                        <label class="block mb-2 text-sm font-medium text-[var(--texto-secundario)]">
+
+                            Contraseña
+                        </label>
+
+                        <div class="relative">
+
+                            <lucide-angular [img]="Lock"
+                                class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400">
+                            </lucide-angular>
+
+                            <input type="password" [(ngModel)]="contrasena" (keydown.enter)="login()"
+                                placeholder="••••••••" autocomplete="current-password" class="w-full rounded-xl border border-[var(--verde-palido)]
+                       bg-[var(--crema)]
+                       py-3 pl-12 pr-4
+                       focus:outline-none
+                       focus:ring-2
+                       focus:ring-[var(--verde-claro)]
+                       focus:border-transparent">
+
+                        </div>
+
+                    </div>
+
+                    <!-- ROLES -->
+                    <div class="mb-8">
+
+                        <label class="block mb-3 text-sm font-medium text-[var(--texto-secundario)]">
+
+                            Ingresar como
+                        </label>
+
+                        <div class="grid grid-cols-2 gap-3">
+
+                            @for (rol of roles; track rol) {
+
+                            <button type="button" (click)="rolSeleccionado = rol"
+                                class="rounded-xl border px-4 py-3 text-sm font-medium transition-all"
+                                [class.border-[var(--verde-medio)]]="rolSeleccionado === rol"
+                                [class.bg-[var(--verde-palido)]]="rolSeleccionado === rol"
+                                [class.text-[var(--verde-oscuro)]]="rolSeleccionado === rol"
+                                [class.border-gray-200]="rolSeleccionado !== rol"
+                                [class.text-gray-600]="rolSeleccionado !== rol"
+                                [class.hover:border-[var(--verde-claro)]]="rolSeleccionado !== rol">
+
+                                {{ rol }}
+
+                            </button>
+
+                            }
+
+                        </div>
+
+                    </div>
+
+                    <!-- BOTÓN -->
+                    <button type="button" (click)="login()" class="w-full flex items-center justify-center gap-3 rounded-xl
+                   bg-[var(--verde-medio)]
+                   hover:bg-[var(--verde-oscuro)]
+                   text-white
+                   font-medium
+                   py-3.5
+                   transition-colors">
+
+                        <lucide-angular [img]="LogIn" class="w-5 h-5">
+                        </lucide-angular>
+
+                        Ingresar al sistema
+
+                    </button>
+
+                    <!-- CREDENCIALES -->
+                    <div class="mt-8 rounded-xl bg-[var(--verde-palido)] px-4 py-4 text-center">
+
+                        <p class="text-sm text-[var(--texto-secundario)]">
+
+                            Credenciales de prueba:
+
+                        </p>
+
+                        <p class="mt-2 font-semibold text-[var(--texto-principal)]">
+
+                            admin01 / 1234
+
+                        </p>
+
+                    </div>
+
+                    <!-- FOOTER -->
+                    <div class="mt-8 flex justify-between text-xs text-[var(--texto-secundario)]">
+
+                        <span>SIGA-LP v1.0</span>
+
+                        <span>INF-162 · UMSA · 2026</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

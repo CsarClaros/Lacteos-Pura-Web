@@ -9,7 +9,8 @@ import {
   BookOpen,
   Network,
   Box,
-  BarChart3
+  BarChart3,
+  User
 } from 'lucide-angular';
 
 @Component({
@@ -32,6 +33,7 @@ export class Navbar {
   readonly Network = Network;
   readonly Box = Box;
   readonly BarChart3 = BarChart3;
+  readonly User = User;
 
   isMenuOpen = false;
   navLinks = [
@@ -56,9 +58,9 @@ export class Navbar {
       icon: Box
     },
     {
-      path: '/dashboard',
-      label: 'Dashboard',
-      icon: BarChart3
+      path: '/login',
+      label: 'Login',
+      icon: User
     }
   ];
 
