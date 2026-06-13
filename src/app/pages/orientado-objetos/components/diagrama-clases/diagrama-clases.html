@@ -1,66 +1,28 @@
-<section class="diagram-section">
+<div class="section-header">
 
-    <div class="section-header">
-        <h2>Diagrama de Clases</h2>
+    <h2>Diagrama de Clases del Sistema</h2>
 
-        <p>
-            El diagrama de clases representa la estructura estática del sistema,
-            identificando las principales entidades, sus atributos, métodos y
-            relaciones.
-        </p>
-    </div>
+    <p>
+        El diagrama de clases representa la estructura estática del sistema,
+        identificando las principales clases, sus atributos, métodos y las
+        relaciones existentes entre ellas. Este modelo permite comprender
+        la organización interna del software y constituye la base para la
+        implementación del diseño orientado a objetos del sistema de gestión
+        de Lácteos Pura.
+    </p>
 
-    <div class="uml-container">
+</div>
 
-        @for (clase of clases; track clase.nombre) {
+<div class="diagram-card">
 
-        <div class="uml-card">
+    <div class="diagram-image-container">
 
-            <div class="uml-title">
-                {{ clase.nombre }}
-            </div>
-
-            <div class="uml-body">
-
-                <div class="uml-subsection">
-                    <h4>Atributos</h4>
-
-                    <ul>
-                        @for (atributo of clase.atributos; track atributo) {
-                        <li>{{ atributo }}</li>
-                        }
-                    </ul>
-                </div>
-
-                <div class="uml-subsection">
-                    <h4>Métodos</h4>
-
-                    <ul>
-                        @for (metodo of clase.metodos; track metodo) {
-                        <li>{{ metodo }}</li>
-                        }
-                    </ul>
-                </div>
-
-            </div>
-
-        </div>
-
-        }
+        <img
+            src="assets/images/Diagrama_Clases.webp"
+            alt="Diagrama de Clases del Sistema"
+            class="diagram-image"
+        >
 
     </div>
 
-    <div class="relations">
-
-        <h3>Relaciones Principales</h3>
-
-        <ul>
-            <li><strong>Cliente</strong> realiza uno o varios pedidos.</li>
-            <li><strong>Pedido</strong> contiene múltiples productos.</li>
-            <li><strong>Inventario</strong> administra la disponibilidad de productos.</li>
-            <li><strong>Producto</strong> participa en procesos de producción y venta.</li>
-        </ul>
-
-    </div>
-
-</section>
+</div>

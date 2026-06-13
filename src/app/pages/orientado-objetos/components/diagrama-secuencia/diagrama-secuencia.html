@@ -1,163 +1,61 @@
-<div class="diagram-section">
+<div class="section-header">
 
-    <div class="section-header">
-        <h2>Diagrama de Secuencia</h2>
+    <h2>Diagramas de Secuencia del Sistema</h2>
 
-        <p>
-            El diagrama de secuencia muestra la interacción temporal entre los
-            diferentes objetos del sistema durante el proceso de registro de un
-            pedido, destacando el orden de los mensajes intercambiados.
-        </p>
-    </div>
+    <p>
+        Los diagramas de secuencia representan la interacción entre los
+        actores y los diferentes componentes del sistema a lo largo del
+        tiempo, mostrando el intercambio de mensajes y el orden en que
+        se ejecutan las operaciones para cumplir una funcionalidad específica.
+        A continuación, se presentan los diagramas correspondientes a algunos
+        de los principales casos de uso del sistema.
+    </p>
 
-    <div class="diagram-card">
+</div>
 
-        <h3>Caso de Uso: Registrar Pedido</h3>
+<div class="diagram-card">
 
-        <div class="svg-container">
+    <h3>Caso de Uso CU01</h3>
 
-            <svg viewBox="0 0 1000 700">
+    <div class="diagram-image-container">
 
-                <!-- Participantes -->
-
-                <rect x="50" y="20" width="100" height="40" rx="5" class="participant" />
-                <text x="100" y="45" text-anchor="middle">Cliente</text>
-
-                <rect x="250" y="20" width="120" height="40" rx="5" class="participant" />
-                <text x="310" y="45" text-anchor="middle">:Sistema</text>
-
-                <rect x="470" y="20" width="120" height="40" rx="5" class="participant" />
-                <text x="530" y="45" text-anchor="middle">:Pedido</text>
-
-                <rect x="690" y="20" width="120" height="40" rx="5" class="participant" />
-                <text x="750" y="45" text-anchor="middle">:Inventario</text>
-
-                <rect x="860" y="20" width="120" height="40" rx="5" class="participant" />
-                <text x="920" y="45" text-anchor="middle">:BaseDatos</text>
-
-                <!-- Líneas de vida -->
-
-                <line x1="100" y1="60" x2="100" y2="650" class="lifeline" />
-                <line x1="310" y1="60" x2="310" y2="650" class="lifeline" />
-                <line x1="530" y1="60" x2="530" y2="650" class="lifeline" />
-                <line x1="750" y1="60" x2="750" y2="650" class="lifeline" />
-                <line x1="920" y1="60" x2="920" y2="650" class="lifeline" />
-
-                <defs>
-                    <marker id="arrow-seq" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-                        <polygon points="0 0, 10 3, 0 6" />
-                    </marker>
-                </defs>
-
-                <!-- Mensajes -->
-
-                <line x1="100" y1="100" x2="310" y2="100" class="message" marker-end="url(#arrow-seq)" />
-                <text x="205" y="90" text-anchor="middle">
-                    1: iniciarSesion()
-                </text>
-
-                <line x1="310" y1="140" x2="920" y2="140" class="message" marker-end="url(#arrow-seq)" />
-                <text x="615" y="130" text-anchor="middle">
-                    2: validarCredenciales()
-                </text>
-
-                <line x1="920" y1="170" x2="310" y2="170" class="return-message" marker-end="url(#arrow-seq)" />
-
-                <line x1="100" y1="220" x2="310" y2="220" class="message" marker-end="url(#arrow-seq)" />
-                <text x="205" y="210" text-anchor="middle">
-                    3: mostrarCatalogo()
-                </text>
-
-                <line x1="100" y1="260" x2="310" y2="260" class="message" marker-end="url(#arrow-seq)" />
-                <text x="205" y="250" text-anchor="middle">
-                    4: seleccionarProducto()
-                </text>
-
-                <line x1="310" y1="310" x2="750" y2="310" class="message" marker-end="url(#arrow-seq)" />
-                <text x="530" y="300" text-anchor="middle">
-                    5: verificarStock()
-                </text>
-
-                <line x1="750" y1="340" x2="310" y2="340" class="return-message" marker-end="url(#arrow-seq)" />
-
-                <line x1="100" y1="390" x2="310" y2="390" class="message" marker-end="url(#arrow-seq)" />
-                <text x="205" y="380" text-anchor="middle">
-                    6: agregarAlCarrito()
-                </text>
-
-                <line x1="100" y1="430" x2="310" y2="430" class="message" marker-end="url(#arrow-seq)" />
-                <text x="205" y="420" text-anchor="middle">
-                    7: confirmarPedido()
-                </text>
-
-                <line x1="310" y1="480" x2="530" y2="480" class="message" marker-end="url(#arrow-seq)" />
-                <text x="420" y="470" text-anchor="middle">
-                    8: crearPedido()
-                </text>
-
-                <line x1="530" y1="530" x2="920" y2="530" class="message" marker-end="url(#arrow-seq)" />
-                <text x="725" y="520" text-anchor="middle">
-                    9: guardarPedido()
-                </text>
-
-                <line x1="530" y1="570" x2="750" y2="570" class="message" marker-end="url(#arrow-seq)" />
-                <text x="640" y="560" text-anchor="middle">
-                    10: actualizarStock()
-                </text>
-
-                <line x1="310" y1="620" x2="100" y2="620" class="message" marker-end="url(#arrow-seq)" />
-                <text x="205" y="610" text-anchor="middle">
-                    11: mostrarConfirmacion()
-                </text>
-
-            </svg>
-
-        </div>
+        <img
+            src="assets/images/Diagrama_Secuencia_CU01.webp"
+            alt="Diagrama de Secuencia del Caso de Uso CU01"
+            class="diagram-image"
+        >
 
     </div>
 
-    <div class="info-grid">
+</div>
 
-        <div class="info-card">
-            <h4>Elementos del Diagrama</h4>
+<div class="diagram-card">
 
-            <ul>
-                <li>
-                    <strong>Líneas de vida:</strong>
-                    representan la existencia de los objetos.
-                </li>
+    <h3>Caso de Uso CU13</h3>
 
-                <li>
-                    <strong>Mensajes:</strong>
-                    llamadas entre objetos.
-                </li>
+    <div class="diagram-image-container">
 
-                <li>
-                    <strong>Retornos:</strong>
-                    respuestas generadas por los objetos.
-                </li>
+        <img
+            src="assets/images/Diagrama_Secuencia_CU13.webp"
+            alt="Diagrama de Secuencia del Caso de Uso CU13"
+            class="diagram-image"
+        >
 
-                <li>
-                    <strong>Secuencia temporal:</strong>
-                    el tiempo avanza de arriba hacia abajo.
-                </li>
-            </ul>
-        </div>
+    </div>
 
-        <div class="info-card">
-            <h4>Descripción del Flujo</h4>
+</div>
 
-            <p>
-                El cliente inicia sesión en el sistema y selecciona los productos
-                deseados. El sistema consulta el inventario para verificar la
-                disponibilidad de stock y posteriormente genera el pedido.
-            </p>
+<div class="diagram-card">
 
-            <p>
-                Finalmente, el pedido se almacena en la base de datos, se actualiza
-                el inventario y se muestra la confirmación al usuario.
-            </p>
-        </div>
+    <h3>Caso de Uso CU22</h3>
+
+    <div class="diagram-image-container">
+
+        <img
+            src="assets/images/Diagrama_Secuencia_CU22.webp"
+            alt="Diagrama de Secuencia del Caso de Uso CU22"
+            class="diagram-image"
+        >
 
     </div>
 

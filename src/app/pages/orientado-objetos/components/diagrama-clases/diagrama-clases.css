@@ -1,101 +1,37 @@
-.diagram-section {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+.diagram-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.08),
+        0 4px 10px rgba(0, 0, 0, 0.04);
 }
 
-.section-header h2 {
-    margin-bottom: 1rem;
-    color: var(--texto-principal);
-}
-
-.section-header p {
-    color: var(--texto-secundario);
-    line-height: 1.7;
-}
-
-.uml-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-}
-
-.uml-card {
-    background: white;
-    border: 2px solid #2563eb;
-    border-radius: 12px;
+.diagram-image-container {
     overflow: hidden;
-    transition: 0.3s;
-}
-
-.uml-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
-}
-
-.uml-title {
-    background: #2563eb;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    font-weight: 700;
-}
-
-.uml-body {
+    border-radius: 18px;
+    background: linear-gradient(
+        135deg,
+        #f8fafc,
+        #eef7f1
+    );
     padding: 1rem;
 }
 
-.uml-subsection {
-    margin-bottom: 1rem;
+.diagram-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+    cursor: zoom-in;
 }
 
-.uml-subsection:last-child {
-    margin-bottom: 0;
-}
-
-.uml-subsection h4 {
-    color: #2563eb;
-    margin-bottom: .75rem;
-}
-
-.uml-subsection ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.uml-subsection li {
-    padding: .3rem 0;
-    font-size: .9rem;
-    border-bottom: 1px solid #e5e7eb;
-}
-
-.uml-subsection li:last-child {
-    border-bottom: none;
-}
-
-.relations {
-    background: var(--verde-palido);
-    padding: 1.5rem;
-    border-radius: 12px;
-}
-
-.relations h3 {
-    color: var(--verde-oscuro);
-    margin-bottom: 1rem;
-}
-
-.relations ul {
-    padding-left: 1.2rem;
-}
-
-.relations li {
-    margin-bottom: .75rem;
-    color: var(--texto-secundario);
-}
-
-@media (max-width: 768px) {
-    .uml-container {
-        grid-template-columns: 1fr;
-    }
+.diagram-image:hover {
+    transform: scale(1.02);
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.15);
 }
